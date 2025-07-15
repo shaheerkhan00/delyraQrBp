@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #4a6bff;
-            --secondary-color: #6c63ff;
-            --dark-color: #2d3748;
-            --light-color: #f8f9fa;
-            --success-color: #48bb78;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary-color: #D4AF37; /* Gold */
+            --secondary-color: #B38B2D; /* Darker gold */
+            --dark-color: #121212; /* Dark background */
+            --light-color: #FFFFFF; /* White text */
+            --button-text: #121212; /* Black text on buttons */
+            --shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
             --transition: all 0.3s ease;
         }
 
@@ -20,22 +20,23 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: var(--dark-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            color: var(--dark-color);
+            color: var(--light-color);
             line-height: 1.6;
         }
 
         .profile-card {
-            background: white;
+            background: rgba(18, 18, 18, 0.9);
+            border: 1px solid var(--primary-color);
             border-radius: 16px;
             box-shadow: var(--shadow);
             width: 100%;
@@ -51,23 +52,24 @@
 
         .profile-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
         }
 
         .logo {
             width: 100px;
             height: 100px;
             margin: 0 auto 20px;
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: var(--dark-color);
             font-size: 40px;
             font-weight: bold;
             box-shadow: var(--shadow);
             animation: bounce 1s ease;
+            border: 2px solid var(--primary-color);
         }
 
         .logo img {
@@ -80,15 +82,17 @@
         h1 {
             font-size: 24px;
             margin-bottom: 5px;
-            color: var(--dark-color);
+            color: var(--light-color);
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         .position {
-            color: var(--secondary-color);
+            color: var(--primary-color);
             margin-bottom: 30px;
             font-weight: 500;
             font-size: 16px;
+            letter-spacing: 0.5px;
         }
 
         .contact-buttons {
@@ -105,12 +109,13 @@
             padding: 12px 20px;
             border-radius: 50px;
             text-decoration: none;
-            color: white;
+            color: var(--button-text);
             font-weight: 600;
             transition: var(--transition);
             box-shadow: var(--shadow);
             position: relative;
             overflow: hidden;
+            border: none;
         }
 
         .btn i {
@@ -119,24 +124,25 @@
         }
 
         .btn-call {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
 
         .btn-whatsapp {
-            background: #25D366;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
 
         .btn-email {
-            background: #D44638;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
 
         .btn-website {
-            background: var(--dark-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            color: var(--button-text);
         }
 
         .btn:active {
@@ -150,7 +156,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateX(-100%) skewX(-15deg);
             transition: transform 0.4s ease;
         }
@@ -172,26 +178,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary-color);
             font-size: 18px;
             transition: var(--transition);
             box-shadow: var(--shadow);
+            border: 1px solid var(--primary-color);
+            background: transparent;
         }
 
         .social-icon:hover {
             transform: translateY(-3px) scale(1.1);
-        }
-
-        .instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
-        }
-
-        .facebook {
-            background: #3b5998;
-        }
-
-        .tiktok {
-            background: #000000;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
         @keyframes fadeIn {
@@ -236,6 +235,7 @@
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="profile-card">
@@ -267,13 +267,13 @@
         </div>
         
         <div class="social-icons">
-            <a href="#" class="social-icon instagram">
+            <a href="#" class="social-icon">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="#" class="social-icon facebook">
+            <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="#" class="social-icon tiktok">
+            <a href="#" class="social-icon">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
@@ -312,7 +312,7 @@
         style.textContent = `
             .ripple {
                 position: absolute;
-                background: rgba(255, 255, 255, 0.4);
+                background: rgba(255, 215, 0, 0.4);
                 border-radius: 50%;
                 transform: scale(0);
                 animation: ripple 0.6s linear;
